@@ -1,17 +1,17 @@
 class PhrasesController < ApplicationController
   def index
-    "Uh"
+    render plain: "Uh"
   end
   
   def show
-    "OK"
+    render plain: "OK"
   end
 
   def new
   end
 
   def create
-    "Create?"
+    render plain: "Create?"
   end
 
   def edit
