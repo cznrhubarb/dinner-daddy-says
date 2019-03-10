@@ -11,6 +11,7 @@ class PhrasesController < ApplicationController
   end
 
   def create
+    "Create?"
   end
 
   def edit
