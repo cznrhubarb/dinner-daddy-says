@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resources :phrases
+  match '/phrases' => 'phrases#random', via: :post
 end
