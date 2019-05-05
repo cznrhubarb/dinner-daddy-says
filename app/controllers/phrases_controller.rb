@@ -3,7 +3,6 @@ class PhrasesController < ApplicationController
   
   def random
     @random_phrase = Phrase.order("RANDOM()").first
-    @random_phrase.inspect
     render plain: @random_phrase.text
   end
 
