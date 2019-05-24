@@ -1,4 +1,5 @@
 class PhrasesController < ApplicationController
+  protect_from_forgery with: :null_session
   
   def random
     @random_phrase = Phrase.order("RANDOM()").first
