@@ -3,8 +3,8 @@ class PhrasesController < ApplicationController
   
   def random
     @random_phrase = Phrase.order("RANDOM()").first
-    render plain: @random_phrase.text
-    #render json: { "response_type": "in_channel", "text": @random_phrase.text }
+    #render plain: @random_phrase.text
+    render json: { "response_type": "in_channel", "text": @random_phrase.text }
   end
 
   def add  
