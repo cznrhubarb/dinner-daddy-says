@@ -4,12 +4,13 @@ class PhrasesController < ApplicationController
   protect_from_forgery with: :null_session
   
   def random
-    return render json: {}, status: 403 unless valid_slack_token?
-    PhraseWorker.perform_async(phrase_params.to_h)
-    render json: { response_type: "in_channel" }, status: :created
-    #client = HTTPClient.new
-    #client.post(SLACK_API_ENDPOINT, params)
-    ##render plain: @random_phrase.text
+    # return render json: {}, status: 403 unless valid_slack_token?
+    # PhraseWorker.perform_async(phrase_params.to_h)
+    # render json: { response_type: "in_channel" }, status: :created
+    # #client = HTTPClient.new
+    # #client.post(SLACK_API_ENDPOINT, params)
+    # ##render plain: @random_phrase.text
+    render json: { "response_type": "in_channel", "text": @random_phrase.text }
   end
 
   def add  
