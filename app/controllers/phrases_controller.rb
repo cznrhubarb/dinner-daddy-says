@@ -12,7 +12,7 @@ class PhrasesController < ApplicationController
       everything.each do |p|
         the_menu = the_menu + p.id.to_s + ": " + p.text + "\n"
       end
-      #render plain: "a list of entries"
+      render plain: the_menu
     elsif params[:text].to_i.to_s == params[:text]
       render json: { "response_type": "in_channel", "text": Phrase.find(params[:text].to_i).text }
     else
