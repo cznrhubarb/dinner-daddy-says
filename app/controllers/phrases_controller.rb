@@ -2,10 +2,6 @@ class PhrasesController < ApplicationController
   protect_from_forgery with: :null_session
   
   def random
-    # TODO: Add an option to retrieve an indexed list of sayings
-    # TODO: Add an option to pass in an index to get a specific saying
-    
-    #render plain: params[:text]
     if params[:text].upcase == "GOTEM"
       everything = Phrase.all
       the_menu = ""
@@ -19,8 +15,6 @@ class PhrasesController < ApplicationController
       @random_phrase = Phrase.order("RANDOM()").first
       render json: { "response_type": "in_channel", "text": @random_phrase.text }
     end
-    #@random_phrase = Phrase.order("RANDOM()").first
-    #render json: { "response_type": "in_channel", "text": @random_phrase.text }
   end
 
   def add  
