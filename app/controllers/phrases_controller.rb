@@ -8,8 +8,9 @@ class PhrasesController < ApplicationController
     #render plain: params[:text]
     if params[:text].upcase == "GOTEM"
       everything = Phrase.all
+      the_menu = ""
       everything.each do |p|
-        render plain: p.text
+        the_menu = the_menu + p.id + ": " + p.text + "\n"
       end
       #render plain: "a list of entries"
     elsif params[:text].to_i.to_s == params[:text]
