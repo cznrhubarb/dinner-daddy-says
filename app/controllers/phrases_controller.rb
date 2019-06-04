@@ -10,7 +10,7 @@ class PhrasesController < ApplicationController
       everything = Phrase.all
       the_menu = ""
       everything.each do |p|
-        the_menu = the_menu + p.id + ": " + p.text + "\n"
+        the_menu = the_menu + p.id.to_s + ": " + p.text + "\n"
       end
       #render plain: "a list of entries"
     elsif params[:text].to_i.to_s == params[:text]
